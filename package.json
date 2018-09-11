@@ -1,0 +1,34 @@
+{
+  "name": "redsocial-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMade13/redsocial-react.git"
+  },
+  "keywords": [
+    "react",
+    "javascript"
+  ],
+  "author": "Madeleine M <madeleine1302@gmail.com> (https://github.com/imade13)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iMade13/redsocial-react/issues"
+  },
+  "homepage": "https://github.com/iMade13/redsocial-react#readme"
+}

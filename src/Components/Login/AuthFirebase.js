@@ -1,8 +1,34 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
+import Login from './Login'
+import Home from '../Home/Home'
 //import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class AuthFirebase extends Component {
+
+    constructor (props) {
+        super(props)
+        this.handleAuthGoogle       = this.handleAuthGoogle.bind(this);
+        this.handleAuthFacebook     = this.handleAuthFacebook.bind(this);
+        this.handleAuthRegister     = this.handleAuthRegister.bind(this);
+        this.handleAuthSignIn       = this.handleAuthSignIn.bind(this)
+        this.handleChangeEmail      = this.handleChangeEmail.bind(this);
+        this.handleChangePassword   = this.handleChangePassword.bind(this);
+        this.handleLogout           = this.handleLogout.bind(this);
+        this.state = {
+            email:'',
+            password:'',
+            user: null
+        };
+      }
+    
+      componentDidMount () {
+        firebase.auth().onAuthStateChanged(user => {
+          this.setState({ user })
+        })
+      }
+
+        
     handleAuthGoogle() {
         const provider = new firebase
             .auth
@@ -12,10 +38,11 @@ class AuthFirebase extends Component {
             .signInWithPopup(provider)
             .then(result => console.log(`${result.user.email} ha iniciado sesión`))
             //redirectFromLogin()
-            .catch(error => console.log(`Error: ${error.code}: ${error.message}`));
+            .catch(error => console.error(`Error: ${error.code}: ${error.message}`));
     }
+
     handleAuthFacebook(){
-        const provider = new firebase.auth.GoogleAuthProvider();
+        const provider = new firebase.auth.FacebookAuthProvider();
 
         provider.setCustomParameters({
             'display': 'popup'
@@ -23,24 +50,59 @@ class AuthFirebase extends Component {
         firebase.auth().signInWithPopup(provider)
             .then(() => {
                 console.log('Login con facebook exitoso')
-                //redirectFromLogin()
             })
-            .catch(error => console.log(`Error: ${error.code}: ${error.message}`));
+            .catch(error => console.error(`Error: ${error.code}: ${error.message}`));
 
     }
+
+    handleAuthRegister(e) {
+        e.preventDefault()
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .catch(error=>{console.error (`Error: ${error.code}: ${error.message}`)})
+    }
+
+    handleAuthSignIn(e) {
+        e.preventDefault()
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .catch(error=>{console.error (`Error: ${error.code}: ${error.message}`)})
+    }
+
+
+    handleChangeEmail(e){
+        e.preventDefault()
+        this.setState({email: e.target.value});
+    }
+    handleChangePassword(e){
+        e.preventDefault()
+        this.setState({password: e.target.value});
+    }
+
+
+    handleLogout(){
+        firebase.auth().signOut()
+      .then(result =>console.log('Te has desconectado,te extrañaremos :('))
+      .catch(error => console.error(`Error ${error.code}: ${error.message}`))
+    }
+
+    
     render() {
         return (
-            <div className="row">
-                <div className="col-12">
-                    <button className="btn btn-primary inline pd full green-two" onClick={this.handleAuthFacebook}>
-                        Login con facebook</button>
-                </div>
-                <div className="col-12">
-                    <button
-                        className="btn btn-primary inline pd full green-two"
-                        onClick={this.handleAuthGoogle}>
-                        Login con google</button>
-                </div>
+            <div>
+                {
+                  this.state.user ? 
+                  (<Home onAuthLogOut = {this.handleLogout}/>)
+                   : (<Login    
+                user={this.state.user}
+                onEmail={ this.state.email}
+                onPassword={this.state.password}
+                onChangesE={this.handleChangeEmail}
+                onChangesP={this.handleChangePassword}
+                onAuthRegister={this.handleAuthRegister}
+                onAuthSignIn={this.handleAuthSignIn}
+                onAuthFacebook={this.handleAuthFacebook}
+                onAuthGoogle={this.handleAuthGoogle}
+                />)
+                }
             </div>
         )
     }

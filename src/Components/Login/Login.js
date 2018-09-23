@@ -4,7 +4,7 @@ import '../../css/login.css'
 
 
 //..............................................creacion de componente de funcion sin estado 
-const Login = ({onEmail,onPassword,onChangesE,onChangesP,onAuthRegister,onAuthFacebook,onAuthGoogle } ) => {
+const Login = ({onEmail,onPassword,onChangesE,onChangesP,onAuthRegister,onAuthSignIn,onAuthFacebook,onAuthGoogle } ) => {
     return (
         <div className='container'>
             <div className='row'>
@@ -28,7 +28,7 @@ const Login = ({onEmail,onPassword,onChangesE,onChangesP,onAuthRegister,onAuthFa
                             placeholder="Password"  className="form-control pd"/>
                             <div className="row">
                                 <div className="col-6">
-                                    <button type="submit"
+                                    <button type="submit" onClick= {onAuthSignIn}
                                         className="btn btn-primary inline full green-one">Log in </button>
                                 </div>
                                 <div className="col-6">

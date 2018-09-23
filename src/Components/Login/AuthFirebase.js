@@ -8,12 +8,13 @@ class AuthFirebase extends Component {
 
     constructor (props) {
         super(props)
-        this.handleAuthGoogle = this.handleAuthGoogle.bind(this);
-        this.handleAuthFacebook = this.handleAuthFacebook.bind(this);
-        this.handleAuthRegister = this.handleAuthRegister.bind(this);
-        this.handleChangeEmail = this.handleChangeEmail.bind(this);
-        this.handleChangePassword = this.handleChangePassword.bind(this);
-        this.handleLogout = this.handleLogout.bind(this);
+        this.handleAuthGoogle       = this.handleAuthGoogle.bind(this);
+        this.handleAuthFacebook     = this.handleAuthFacebook.bind(this);
+        this.handleAuthRegister     = this.handleAuthRegister.bind(this);
+        this.handleAuthSignIn       = this.handleAuthSignIn.bind(this)
+        this.handleChangeEmail      = this.handleChangeEmail.bind(this);
+        this.handleChangePassword   = this.handleChangePassword.bind(this);
+        this.handleLogout           = this.handleLogout.bind(this);
         this.state = {
             email:'',
             password:'',
@@ -60,6 +61,13 @@ class AuthFirebase extends Component {
         .catch(error=>{console.error (`Error: ${error.code}: ${error.message}`)})
     }
 
+    handleAuthSignIn(e) {
+        e.preventDefault()
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .catch(error=>{console.error (`Error: ${error.code}: ${error.message}`)})
+    }
+
+
     handleChangeEmail(e){
         e.preventDefault()
         this.setState({email: e.target.value});
@@ -90,6 +98,7 @@ class AuthFirebase extends Component {
                 onChangesE={this.handleChangeEmail}
                 onChangesP={this.handleChangePassword}
                 onAuthRegister={this.handleAuthRegister}
+                onAuthSignIn={this.handleAuthSignIn}
                 onAuthFacebook={this.handleAuthFacebook}
                 onAuthGoogle={this.handleAuthGoogle}
                 />)

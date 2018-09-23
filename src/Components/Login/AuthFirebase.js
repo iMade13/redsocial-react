@@ -15,7 +15,7 @@ class AuthFirebase extends Component {
             .catch(error => console.log(`Error: ${error.code}: ${error.message}`));
     }
     handleAuthFacebook(){
-        const provider = new firebase.auth.GoogleAuthProvider();
+        const provider = new firebase.auth.FacebookAuthProvider();
 
         provider.setCustomParameters({
             'display': 'popup'

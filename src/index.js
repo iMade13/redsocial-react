@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import firebase from 'firebase';
-import App from './App';
+import AuthFirebase from './Components/Login/AuthFirebase';
 import registerServiceWorker from './registerServiceWorker';
 
 firebase.initializeApp({
@@ -13,7 +13,7 @@ firebase.initializeApp({
   messagingSenderId: "31676279948"
 })
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<AuthFirebase/>, document.getElementById('root'));
 registerServiceWorker();
 
 

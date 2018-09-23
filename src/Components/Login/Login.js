@@ -1,10 +1,9 @@
 import React from 'react';
-//import firebase from 'firebase';
 import Logo from '../Global/Logo'
-import SignIn from '../Login/SignIn'
-import AuthFirebase from './AuthFirebase';
+import '../../css/login.css'
 
-const Login = () => {
+//..............................................creacion de componente de funcion sin estado 
+const Login = ({onAuthRegister,onAuthFacebook,onAuthGoogle } ) => {
     return (
         <div className='container'>
             <div className='row'>
@@ -17,8 +16,36 @@ const Login = () => {
             <div className="row">
                 <div className="col-12 col-md-5 mx-auto">
                     <div className="form-group mb-0">
-                        <SignIn/>
-                        <AuthFirebase/>
+
+                        <section>
+                            <input
+                             type="email"
+                            placeholder="Email" className="form-control pd"/>
+                            <input
+                            type="password"
+                            placeholder="Password"  className="form-control pd"/>
+                            <div className="row">
+                                <div className="col-6">
+                                    <button type="submit"
+                                        className="btn btn-primary inline full green-one">Log in </button>
+                                </div>
+                                <div className="col-6">
+                                    <button onClick={ onAuthRegister } className="btn btn-primary inline full green-one">Registrarse</button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div className="row">
+                            <div className="col-12">
+                                <button className="btn btn-primary inline pd full green-two" 
+                                onClick={ onAuthFacebook }> Login con Facebook </button>
+                            </div>
+                            <div className="col-12">
+                                <button
+                                className="btn btn-primary inline pd full green-two"
+                                onClick={ onAuthGoogle }> Login con Google </button>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>

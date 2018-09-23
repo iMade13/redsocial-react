@@ -1,8 +1,30 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
+import Login from './Login'
+import Home from '../Home/Home'
 //import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class AuthFirebase extends Component {
+
+    constructor () {
+        super()
+        this.handleAuthGoogle = this.handleAuthGoogle.bind(this)
+        this.handleAuthFacebook = this.handleAuthFacebook.bind(this)
+        this.handleAuthRegister = this.handleAuthFacebook.bind(this)
+        this.handleLogout = this.handleLogout.bind(this)
+      }
+    
+      state = {
+        user: null
+      }
+    
+      componentWillMount () {
+        firebase.auth().onAuthStateChanged(user => {
+          this.setState({ user })
+        })
+      }
+
+        
     handleAuthGoogle() {
         const provider = new firebase
             .auth
@@ -12,8 +34,9 @@ class AuthFirebase extends Component {
             .signInWithPopup(provider)
             .then(result => console.log(`${result.user.email} ha iniciado sesión`))
             //redirectFromLogin()
-            .catch(error => console.log(`Error: ${error.code}: ${error.message}`));
+            .catch(error => console.error(`Error: ${error.code}: ${error.message}`));
     }
+
     handleAuthFacebook(){
         const provider = new firebase.auth.FacebookAuthProvider();
 
@@ -25,22 +48,33 @@ class AuthFirebase extends Component {
                 console.log('Login con facebook exitoso')
                 //redirectFromLogin()
             })
-            .catch(error => console.log(`Error: ${error.code}: ${error.message}`));
+            .catch(error => console.error(`Error: ${error.code}: ${error.message}`));
 
     }
+
+    handleAuthRegister() {}
+
+
+    handleLogout(){
+        firebase.auth().signOut()
+      .then(result =>console.log('Te has desconectado,te extrañaremos :('))
+      .catch(error => console.error(`Error ${error.code}: ${error.message}`))
+    }
+
+    
     render() {
         return (
-            <div className="row">
-                <div className="col-12">
-                    <button className="btn btn-primary inline pd full green-two" onClick={this.handleAuthFacebook}>
-                        Login con facebook</button>
-                </div>
-                <div className="col-12">
-                    <button
-                        className="btn btn-primary inline pd full green-two"
-                        onClick={this.handleAuthGoogle}>
-                        Login con google</button>
-                </div>
+            <div>
+                {
+                  this.state.user ? 
+                  (<Home onAuthLogOut = {this.handleLogout}/>)
+                   : (<Login    
+                user={this.state.user}
+                onAuthRegister={this.handleAuthRegister}
+                onAuthFacebook={this.handleAuthFacebook}
+                onAuthGoogle={this.handleAuthGoogle}
+                />)
+                }
             </div>
         )
     }

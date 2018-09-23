@@ -6,19 +6,22 @@ import Home from '../Home/Home'
 
 class AuthFirebase extends Component {
 
-    constructor () {
-        super()
-        this.handleAuthGoogle = this.handleAuthGoogle.bind(this)
-        this.handleAuthFacebook = this.handleAuthFacebook.bind(this)
-        this.handleAuthRegister = this.handleAuthFacebook.bind(this)
-        this.handleLogout = this.handleLogout.bind(this)
+    constructor (props) {
+        super(props)
+        this.handleAuthGoogle = this.handleAuthGoogle.bind(this);
+        this.handleAuthFacebook = this.handleAuthFacebook.bind(this);
+        this.handleAuthRegister = this.handleAuthRegister.bind(this);
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
+        this.state = {
+            email:'',
+            password:'',
+            user: null
+        };
       }
     
-      state = {
-        user: null
-      }
-    
-      componentWillMount () {
+      componentDidMount () {
         firebase.auth().onAuthStateChanged(user => {
           this.setState({ user })
         })
@@ -46,13 +49,25 @@ class AuthFirebase extends Component {
         firebase.auth().signInWithPopup(provider)
             .then(() => {
                 console.log('Login con facebook exitoso')
-                //redirectFromLogin()
             })
             .catch(error => console.error(`Error: ${error.code}: ${error.message}`));
 
     }
 
-    handleAuthRegister() {}
+    handleAuthRegister(e) {
+        e.preventDefault()
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .catch(error=>{console.error (`Error: ${error.code}: ${error.message}`)})
+    }
+
+    handleChangeEmail(e){
+        e.preventDefault()
+        this.setState({email: e.target.value});
+    }
+    handleChangePassword(e){
+        e.preventDefault()
+        this.setState({password: e.target.value});
+    }
 
 
     handleLogout(){
@@ -70,6 +85,10 @@ class AuthFirebase extends Component {
                   (<Home onAuthLogOut = {this.handleLogout}/>)
                    : (<Login    
                 user={this.state.user}
+                onEmail={ this.state.email}
+                onPassword={this.state.password}
+                onChangesE={this.handleChangeEmail}
+                onChangesP={this.handleChangePassword}
                 onAuthRegister={this.handleAuthRegister}
                 onAuthFacebook={this.handleAuthFacebook}
                 onAuthGoogle={this.handleAuthGoogle}

@@ -2,8 +2,9 @@ import React from 'react';
 import Logo from '../Global/Logo'
 import '../../css/login.css'
 
+
 //..............................................creacion de componente de funcion sin estado 
-const Login = ({onAuthRegister,onAuthFacebook,onAuthGoogle } ) => {
+const Login = ({onEmail,onPassword,onChangesE,onChangesP,onAuthRegister,onAuthFacebook,onAuthGoogle } ) => {
     return (
         <div className='container'>
             <div className='row'>
@@ -18,11 +19,12 @@ const Login = ({onAuthRegister,onAuthFacebook,onAuthGoogle } ) => {
                     <div className="form-group mb-0">
 
                         <section>
+                            
                             <input
-                             type="email"
-                            placeholder="Email" className="form-control pd"/>
+                             type="email" value={ onEmail}  onChange={ onChangesE } 
+                             placeholder="Email" className="form-control pd"/>
                             <input
-                            type="password"
+                             value={ onPassword} type="password" onChange={ onChangesP }
                             placeholder="Password"  className="form-control pd"/>
                             <div className="row">
                                 <div className="col-6">
@@ -30,7 +32,7 @@ const Login = ({onAuthRegister,onAuthFacebook,onAuthGoogle } ) => {
                                         className="btn btn-primary inline full green-one">Log in </button>
                                 </div>
                                 <div className="col-6">
-                                    <button onClick={ onAuthRegister } className="btn btn-primary inline full green-one">Registrarse</button>
+                                    <button type="submit" onClick={ onAuthRegister } className="btn btn-primary inline full green-one">Registrarse</button>
                                 </div>
                             </div>
                         </section>

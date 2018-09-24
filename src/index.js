@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import firebase from 'firebase';
 import AuthFirebase from './Components/Login/AuthFirebase';
 import registerServiceWorker from './registerServiceWorker';
+import '../src/css/style.css';
+import '../src/css/style-post.css';
 
 firebase.initializeApp({
   apiKey: "AIzaSyASGPdlcAyM0wCqN4GtVaN5b_cygABwoeo",

@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from '../Global/Header';
 
-const Home = ({onAuthLogOut}) => {
+function Home (props) {
     return (
-        <div><h1>Hola Mundo!</h1>
-        <button onClick={ onAuthLogOut } >LogOut</button>
-        </div>
+       <div>
+       <Header {...props} /> 
+       </div>
     )}
 
-    export default Home;
+export default Home;
+

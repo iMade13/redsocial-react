@@ -17,8 +17,9 @@ class Menu extends Component {
         this.toggle = this
             .toggle
             .bind(this)
+        
     }
-
+    
     toggle() {
         let boton = this.btnMenu.current;
         let fondo_enlace = this.fondo.current;

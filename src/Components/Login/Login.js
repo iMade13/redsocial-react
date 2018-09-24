@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Global/Logo'
-
+import '../../css/style.css'
 
 
 //..............................................creacion de componente de funcion sin estado
@@ -9,17 +9,17 @@ const Login = ({onEmail,onPassword,onChangesE,onChangesP,onAuthRegister,onAuthSi
         <div className='container'>
             <div className='row'>
                 <div className="col-10 col-md-5 mx-auto">
-                    <div className="col-12 center" id="logoIndex">
-                        <Logo/>
+                    <div className="col-12 center">
+                        <div className="logo" id="logoIndex">
+                            <Logo />
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 col-md-5 mx-auto">
                     <div className="form-group mb-0">
-
                         <section>
-                            
                             <input
                              type="email" value={ onEmail}  onChange={ onChangesE } 
                              placeholder="Email" className="form-control pd"/>

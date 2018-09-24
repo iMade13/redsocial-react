@@ -1,27 +1,22 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Logo from './Logo.js'
 
-const Header = (props)=> {
+const Header = (props) => {
     return (
-        <div className= 'divHeader'>
-            <header>
-                <div className="container">
-                    <div className="row" id="profile">
-                        <div className="col-4 col-md-3 logo">
-                        <Logo/>
-                        </div>
-                        <div className="col col-md-8">
-                            <span className="displayName">{props.user.displayName}</span>   
-                            <img className="imagen" src={props.user.photoURL} />
-                        </div>
+        <header>
+            <div className="container">
+                <div className="row" id="profile">
+                    <div className="col-4 col-md-3 logo">
+                        <Logo />
+                    </div>
+                    <div className="col col-md-8">
+                        <span className="displayName">{props.user.displayName}</span>
+                        <img className="imagen" src={props.user.photoURL} alt="userURL" width="30"/>
                     </div>
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
     )
 }
 
-
-
 export default Header;
-

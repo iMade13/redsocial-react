@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import Login from './Login';
 import Home from '../Home/Home';
 
+
 class AuthFirebase extends Component {
 
     constructor (props) {
@@ -17,13 +18,15 @@ class AuthFirebase extends Component {
         this.state = {
             email:'',
             password:'',
-            user: null
+            user: null,
+           
         };
       }
     
       componentWillMount () {
         firebase.auth().onAuthStateChanged(user => {
-         this.setState({ user })
+            this.setState({ user })
+         
         })
       }
 
@@ -87,7 +90,7 @@ class AuthFirebase extends Component {
     render() {
         return (
             <div>
-                {
+                   {
                   this.state.user ? 
                   (<Home user={this.state.user} onAuthLogOut={this.handleLogout} />)
                    :(<Login    
@@ -103,6 +106,8 @@ class AuthFirebase extends Component {
                 />)
                 }
             </div>
+             
+         
         )
     }
 

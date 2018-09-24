@@ -1,3 +1,10 @@
+.hidden {
+    display:none;
+ }
+ .show{
+    display:block;
+ }
+
 .pd {
     margin: 3% 0;
 }
@@ -5,6 +12,10 @@
 #logoIndex {
     padding-top: 30px;
     padding-bottom: 15px;
+}
+
+div#logoIndex.logo img{
+    width: 100%;
 }
 
 .center {

@@ -46,6 +46,7 @@ input #country {
 .profile-photo {
     border-radius: 100%;
     padding: 5px;
+    width: 150px;
 }
 
 .profile-data {

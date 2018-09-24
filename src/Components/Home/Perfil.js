@@ -7,6 +7,7 @@ import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import {faEdit} from '@fortawesome/free-solid-svg-icons';
 import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
 
+
 library.add(faBars);
 library.add(faEnvelope);
 library.add(faUserCircle);
@@ -27,16 +28,10 @@ class Perfil extends Component {
     render (){
         return (
             <div className="col col-md-6 mx-auto profile">
-                <div className="col">
-                    <div href="#" className="btn-menu d-md-none d-flex justify-content-between" id="btn-menu">
-                        <span>Menu</span>
-                        <FontAwesomeIcon icon='bars'/>
-                    </div>
-                </div>
                 <div className="row">
                     <div className="col-12 center">
                         <div id="photo" className="center">
-                        <img  className="imgProfile" src={this.props.user.photoURL} />
+                        <img  className="profile-photo" src={this.props.user.photoURL} alt="perfil"/>
                         </div>
                         <span id="userName">{this.props.user.displayName} </span>
                         <FontAwesomeIcon icon='envelope'  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"/>

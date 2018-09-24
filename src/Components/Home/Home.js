@@ -1,11 +1,15 @@
 import React from 'react';
 import Header from '../Global/Header';
+import Perfil from './Perfil';
 
 function Home (props) {
     return (
-       <div>
+       <body>
        <Header {...props} /> 
-       </div>
+       <main className='container'>
+        <Perfil {...props}/>
+       </main>
+       </body>
     )
 }
 

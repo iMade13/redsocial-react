@@ -3,6 +3,7 @@ import Header from '../Global/Header';
 import Menu from '../Global/Menu'
 import Publicidad from '../Global/Publicidad';
 import Post from '../Post/Post'
+import Perfil from './Perfil';
 
 function Home(props) {
     return (
@@ -19,7 +20,7 @@ function Home(props) {
                         <Post/>
                     </div>
                 </div>
-
+                <Perfil {...props}/>
             </main>
         </section>
 

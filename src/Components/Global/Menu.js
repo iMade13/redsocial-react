@@ -5,7 +5,6 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faUsers} from '@fortawesome/free-solid-svg-icons'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
-import '../../css/style-post.css'
 import '../../css/style.css'
 
 library.add(faUser)

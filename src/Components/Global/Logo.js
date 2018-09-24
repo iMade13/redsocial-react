@@ -7,7 +7,7 @@ import logo from '../../img/logo.png';
 function Logo() {
     return (
         <div className=''>
-            <img src={logo} alt={'Logo'} width='100%'/>
+            <img src={logo} alt={'Logo'} />
         </div>
     );
 }

@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import AuthFirebase from './Components/Login/AuthFirebase';
 import registerServiceWorker from './registerServiceWorker';
 
+
 firebase.initializeApp({
   apiKey: "AIzaSyASGPdlcAyM0wCqN4GtVaN5b_cygABwoeo",
   authDomain: "social-network-react-5f5c4.firebaseapp.com",

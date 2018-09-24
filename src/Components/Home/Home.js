@@ -1,10 +1,11 @@
 import React from 'react';
+import Menu from '../Global/Menu'
 
 const Home = ({onAuthLogOut}) => {
     return (
-        <div><h1>Hola Mundo!</h1>
-        <button onClick={ onAuthLogOut } >LogOut</button>
-        </div>
-    )}
+       
+        <Menu />
+       
+ )}
 
     export default Home;

@@ -1,11 +1,14 @@
 import React from 'react';
-import Menu from '../Global/Menu'
+import Header from '../Global/Header';
 
-const Home = ({onAuthLogOut}) => {
+function Home (props) {
     return (
-       
-        <Menu />
-       
- )}
+       <div>
+       <Header {...props} /> 
+       </div>
+    )
+}
 
-    export default Home;
+
+export default Home;
+

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
-import Login from './Login'
-import Home from '../Home/Home'
-//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import Login from './Login';
+import Home from '../Home/Home';
 
 class AuthFirebase extends Component {
 
@@ -22,9 +21,9 @@ class AuthFirebase extends Component {
         };
       }
     
-      componentDidMount () {
+      componentWillMount () {
         firebase.auth().onAuthStateChanged(user => {
-          this.setState({ user })
+         this.setState({ user })
         })
       }
 
@@ -43,11 +42,11 @@ class AuthFirebase extends Component {
 
     handleAuthFacebook(){
         const provider = new firebase.auth.FacebookAuthProvider();
+        provider.setCustomParameters ({'display': 'popup'})
 
-        provider.setCustomParameters({
-            'display': 'popup'
-        })
-        firebase.auth().signInWithPopup(provider)
+        firebase
+        .auth()
+        .signInWithPopup(provider)
             .then(() => {
                 console.log('Login con facebook exitoso')
             })
@@ -90,10 +89,10 @@ class AuthFirebase extends Component {
             <div>
                 {
                   this.state.user ? 
-                  (<Home onAuthLogOut = {this.handleLogout}/>)
-                   : (<Login    
+                  (<Home user={this.state.user} onAuthLogOut={this.handleLogout} />)
+                   :(<Login    
                 user={this.state.user}
-                onEmail={ this.state.email}
+                onEmail={this.state.email}
                 onPassword={this.state.password}
                 onChangesE={this.handleChangeEmail}
                 onChangesP={this.handleChangePassword}

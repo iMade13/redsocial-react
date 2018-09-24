@@ -1,9 +1,9 @@
 import React from 'react';
 import Logo from '../Global/Logo'
-import '../../css/login.css'
 
 
-//..............................................creacion de componente de funcion sin estado 
+
+//..............................................creacion de componente de funcion sin estado
 const Login = ({onEmail,onPassword,onChangesE,onChangesP,onAuthRegister,onAuthSignIn,onAuthFacebook,onAuthGoogle } ) => {
     return (
         <div className='container'>

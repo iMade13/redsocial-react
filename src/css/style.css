@@ -1,0 +1,221 @@
+.pd {
+    margin: 3% 0;
+}
+
+#logoIndex {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.center {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+input #country {
+    padding-left: 10px;
+    margin-left: 8px;
+}
+
+#message {
+    background: #dff7e9;
+    padding: 10px;
+}
+
+.profile-photo-list {
+    width: 80px;
+    margin: 5px;
+    float: left;
+}
+
+.profile-photo {
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.profile-data {
+    background: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.green-one {
+    background-color: #82b43f;
+    border: none;
+}
+
+.green-two {
+    background-color: #405132;
+    border: none;
+}
+
+.full {
+    width: 100%
+}
+
+
+/* iconos */
+
+main div .profile-icon i {
+    color: #83b43f;
+}
+
+#enabledRol {
+    float: right;
+}
+
+.msn {
+    padding: 1em 0.5em;
+    background-color: #FFF;
+    border-radius: 0.8em;
+    margin: 6 auto;
+    margin-bottom: 20px;
+    margin-top: 1em;
+    color: #4E4D53;
+    text-align: left;
+}
+
+
+/* ====== login ======= */
+
+
+/* .logo img {
+    margin-top: 20%;
+    margin-bottom: 20%;
+} */
+
+#message {
+    background-color: #DEDEDE;
+}
+
+.pull-right {
+    color: #82B43F;
+}
+
+
+/* ===== Perfil ==== */
+
+.infoProfile {
+    border: none;
+    background: none;
+    color: #3d3c3c;
+    margin-left: 5px;
+}
+
+.botones {
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.botones:hover {
+    cursor: pointer;
+}
+
+#enabledRol:hover {
+    background: #c7c8ca;
+}
+
+#enabledCountry {
+    float: right;
+}
+
+#enabledCountry:hover {
+    background: #c7c8ca;
+}
+
+#userName {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.users-box {
+    background: #fff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+
+/* ==== Pagina de Usuarios ==== */
+
+.profile {
+    margin-top: 15px;
+}
+
+.btn-users {
+    margin-right: 8px;
+    /* border: 1px solid #fff;
+    padding: 5px 30px;
+    font-size: 14px;
+    background: #c7c8ca;
+    color: #000;
+    border-radius: 3px; */
+    cursor: pointer;
+}
+
+
+/* .btn-users:hover {
+    background: #3d3c3c;
+} */
+
+a:not([href]):not([tabindex]) {
+    color: #FFF;
+}
+
+#btn-add {
+    margin-left: 100px;
+}
+
+.btn-user {
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#users {
+    margin: 10px;
+    background: rgba(130, 180, 63, .09);
+    padding-top: 8px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+.user-name {
+    font-weight: bold;
+    padding-top: 15px;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.user-rol {
+    color: rgb(55, 92, 6);
+    font-weight: 500;
+    font-weight: 400;
+}
+
+
+/* ==== Imagenes Lateral ==== */
+
+.images img {
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+   
+}
+
+#title-imagenes {
+    text-align: center;
+    font-size: 15px;
+}

@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import Logo from './Logo.js'
+import React from 'react';
+import Logo from './Logo.js';
 
 const Header = (props)=> {
     return (
-        <div className= 'divHeader'>
+       
             <header>
                 <div className="container">
                     <div className="row" id="profile">
@@ -11,13 +11,13 @@ const Header = (props)=> {
                         <Logo/>
                         </div>
                         <div className="col col-md-8">
-                            <span className="displayName">{props.user.displayName}</span>   
+                            <span className="displayName">{props.user.displayName} </span>   
                             <img className="imagen" src={props.user.photoURL} />
                         </div>
                     </div>
                 </div>
             </header>
-        </div>
+        
     )
 }
 

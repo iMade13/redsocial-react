@@ -6,7 +6,7 @@ import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import {faEdit} from '@fortawesome/free-solid-svg-icons';
 import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
-import Menu from '../Global/Menu';
+//import Menu from '../Global/Menu';
 
 library.add(faBars);
 library.add(faEnvelope);

@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import '../src/css/style.css';
 import '../src/css/style-post.css';
 
+
 firebase.initializeApp({
   apiKey: "AIzaSyASGPdlcAyM0wCqN4GtVaN5b_cygABwoeo",
   authDomain: "social-network-react-5f5c4.firebaseapp.com",

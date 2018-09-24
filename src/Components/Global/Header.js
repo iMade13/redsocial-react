@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Logo from './Logo.js'
 
 const Header = (props)=> {
@@ -24,6 +24,4 @@ const Header = (props)=> {
 
 
 export default Header;
-
-
 

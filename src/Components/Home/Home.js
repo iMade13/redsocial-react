@@ -6,7 +6,9 @@ function Home (props) {
        <div>
        <Header {...props} /> 
        </div>
-    )}
+    )
+}
+
 
 export default Home;
 

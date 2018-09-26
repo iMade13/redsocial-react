@@ -6,30 +6,50 @@ import {faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas} from '@fortaw
 //import Menu from '../Global/Menu';
 
 library.add(faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas);
-
-const spanStyle ={ display:'none'}
+library.add(faEnvelope);
+library.add(faUserCircle);
+library.add(faEdit);
+library.add(faGlobeAmericas);
+const spanStyle = {
+    display: 'none'
+}
 
 class Profile extends Component {
     constructor(props) {
         super(props);
-        this.state = { disabled: true }
-      }
+        this.state = {
+            disabled: true
+        }
+    }
 
-      handleClick() {
-        this.setState( {disabled: !this.state.disabled} )
-      } 
+    handleClick() {
+        this.setState({
+            disabled: !this.state.disabled
+        })
+    }
 
-    render (){
+    render() {
         return (
-            <div className="col col-md-6 mx-auto profile">
+            <section>
                 <div className="row">
                     <div className="col-12 center">
                         <div id="photo" className="center">
-                        <img  className="profile-photo" src={this.props.user.photoURL} alt="perfil"/>
+                            <img className="profile-photo" src={this.props.user.photoURL} alt="perfil"/>
                         </div>
-                        <span id="userName">{this.props.user.displayName} </span>
-                        <FontAwesomeIcon icon='envelope'  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"/>
-                        <div className="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <span id="userName">{this.props.user.displayName}
+                        </span>
+                        <FontAwesomeIcon
+                            icon='envelope'
+                            className="ml-2"
+                            data-toggle="modal"
+                            data-target="#exampleModal"
+                            data-whatever="@mdo"/>
+                        <div
+                            className="modal fade"
+                            id="exampleModal"
+                            role="dialog"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -49,7 +69,7 @@ class Profile extends Component {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" className="btn btn-primary"  id="close">Send message</button>
+                                        <button type="button" className="btn btn-primary" id="close">Send message</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,8 +80,19 @@ class Profile extends Component {
                 <div className="row">
                     <div className="col profile-data profile-icon">
                         <FontAwesomeIcon icon='user-circle'/>
-                        <input placeholder='Ingresa Rol' className="infoProfile" id="rol" disabled={(this.state.disabled)? "disabled" : ""}/>
-                        <FontAwesomeIcon icon='edit' id="enabledRol" onClick = {this.handleClick.bind(this)}/>
+                        <input
+                            placeholder='Ingresa Rol'
+                            className="infoProfile"
+                            id="rol"
+                            disabled={(this.state.disabled)
+                            ? "disabled"
+                            : ""}/>
+                        <FontAwesomeIcon
+                            icon='edit'
+                            id="enabledRol"
+                            onClick={this
+                            .handleClick
+                            .bind(this)}/>
                     </div>
                 </div>
                 <div className="row">
@@ -73,11 +104,23 @@ class Profile extends Component {
                 <div className="row">
                     <div className="col profile-data profile-icon">
                         <FontAwesomeIcon icon='globe-americas'/>
-                        <input placeholder='Ingresa País' className="infoProfile" id="country" disabled={(this.state.disabled)? "disabled" : ""}/>
-                        <FontAwesomeIcon icon='edit' className='profile-icon' onClick = {this.handleClick.bind(this)} id="enabledCountry"/>
+                        <input
+                            placeholder='Ingresa País'
+                            className="infoProfile"
+                            id="country"
+                            disabled={(this.state.disabled)
+                            ? "disabled"
+                            : ""}/>
+                        <FontAwesomeIcon
+                            icon='edit'
+                            className='profile-icon'
+                            onClick={this
+                            .handleClick
+                            .bind(this)}
+                            id="enabledCountry"/>
                     </div>
                 </div>
-            </div>
+            </section>
         )
     }
 

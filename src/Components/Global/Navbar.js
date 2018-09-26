@@ -15,8 +15,8 @@ function Navbar(props) {
                 Lista de Usuarios</a>
             <a className="enlaces i iconSvg" to="/message"><FontAwesomeIcon icon="envelope"/>
                 Mensajes</a>
-            <a className="enlaces iconSvg" onClick={props.onAuthLogOut}><FontAwesomeIcon icon="sign-out-alt"/>
-                Logout</a>
+            <div className="enlaces iconSvg" onClick={props.onAuthLogOut}><FontAwesomeIcon icon="sign-out-alt"/>
+                Logout</div>
         </nav>
     )
 

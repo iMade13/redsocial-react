@@ -3,23 +3,26 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 
-
 library.add(faEnvelope)
 
 class Messages extends Component {
+    constructor(props) {
+        super(props);
+
+    }
+
     render() {
         return (
             <section>
-                <div class="col col-md-8 d-flex justify-content-center">
+                <div className="col col-md-8 d-flex justify-content-center">
                     <button className="btn btn-messages" id="receivedMsnButtom">
-                      <FontAwesomeIcon icon="envelope" className="iconSvg"/>
-
+                        <FontAwesomeIcon icon="envelope" className="iconSvg"/>
                         Recibidos</button>
                     <button className="btn btn-messages" id="sendMsnButtom">
-                    <FontAwesomeIcon icon="envelope" className="iconSvg"/>
+                        <FontAwesomeIcon icon="envelope" className="iconSvg"/>
                         Enviados</button>
                 </div>
-
+                <p>{this.props.user.displayName}</p>
             </section>
         )
     }

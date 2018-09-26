@@ -27,7 +27,7 @@
     "deploy": "gh-pages -b master -d build"
   },
   "description": "Red Social utilizando React & Firebase",
-  "main": "index.js",
+  "main": "AuthFirebase.js",
   "devDependencies": {},
   "repository": {
     "type": "git",

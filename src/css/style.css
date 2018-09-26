@@ -184,7 +184,7 @@ main div .profile-icon i {
 } */
 
 a:not([href]):not([tabindex]) {
-    color: #FFF;
+    color: #000;
 }
 
 #btn-add {
@@ -230,4 +230,14 @@ a:not([href]):not([tabindex]) {
 #title-imagenes {
     text-align: center;
     font-size: 15px;
+}
+
+/*=== BOTONES MENSAJES ===*/
+
+.btn-messages{
+    margin: 10px;
+}
+
+.iconSvg {
+    margin-right: 3px;    
 }

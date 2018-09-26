@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
-import Login from './Login';
-import Home from '../Home/Home';
+import Login from '../Pages/Login';
+import Home from '../Pages/Home';
 
 
 class AuthFirebase extends Component {

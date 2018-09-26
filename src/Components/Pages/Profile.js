@@ -1,21 +1,15 @@
 import React, {Component} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
-import {faEdit} from '@fortawesome/free-solid-svg-icons';
-import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
+
 //import Menu from '../Global/Menu';
 
-library.add(faBars);
-library.add(faEnvelope);
-library.add(faUserCircle);
-library.add(faEdit);
-library.add(faGlobeAmericas);
+library.add(faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas);
+
 const spanStyle ={ display:'none'}
 
-class Perfil extends Component {
+class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = { disabled: true }
@@ -89,4 +83,4 @@ class Perfil extends Component {
 
 }
 
-export default Perfil;
+export default Profile;

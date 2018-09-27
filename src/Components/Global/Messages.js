@@ -10,7 +10,7 @@ class Messages extends Component {
     render() {
         return (
             <section>
-                <div class="col col-md-8 d-flex justify-content-center">
+                <div className="col col-md-8 d-flex justify-content-center">
                     <button className="btn btn-messages" id="receivedMsnButtom">
                       <FontAwesomeIcon icon="envelope" className="iconSvg"/>
 

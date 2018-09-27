@@ -5,7 +5,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
 
-//import Menu from '../Global/Menu';
 
 library.add(faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas);
 

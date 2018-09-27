@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Global/Header';
 import Publicidad from '../Global/Publicidad';
+<<<<<<< HEAD
 import Post from '../Pages/Post'
 import Navbar from '../Global/Navbar';
 import Menu from '../Global/Menu'
@@ -9,6 +10,12 @@ import Menu from '../Global/Menu'
 //import Users from '../Users/GetUsers';
 import Profile from './Profile';
 import ShowPost from '../Post/ShowPost'
+=======
+import Profile from '../Global/Profile';
+import Navbar from '../Global/Navbar';
+
+
+>>>>>>> 7992eec890fb58c88959860e97cf5ac0e3ac8542
 
 function Home(props) {
     return (
@@ -20,6 +27,7 @@ function Home(props) {
                         <Navbar {...props}/>
                         <Publicidad/>
                     </div>
+<<<<<<< HEAD
                     <div className="col col-md-6 mx-auto contenido-principal profile">
                         <Menu/>
                         {/* <Users /> */}
@@ -31,6 +39,13 @@ function Home(props) {
                     <ShowPost {...props}/>
                 </div>
                 {/* <Profile {...props}/> */}
+=======
+
+                    <div className="col col-md-6 mx-auto contenido-principal profile"></div>
+                    <Profile {...props}/>
+                </div>
+                
+>>>>>>> 7992eec890fb58c88959860e97cf5ac0e3ac8542
             </main>
         </section>
     )

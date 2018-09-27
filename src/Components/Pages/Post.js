@@ -18,7 +18,7 @@ class Post extends Component {
                             <div className="contenedor-botones d-flex justify-content-between">
                                 <div className="media">
                                     <input type="file" //type="submit"
-                                        name="file" id="file" className="inputfile"/>
+                                         className="inputfile" onChange={this.props.onUpload}/>
                                     <label htmlFor="file">
                                         <FontAwesomeIcon icon="image"/>
                                     </label>

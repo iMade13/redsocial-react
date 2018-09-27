@@ -31,23 +31,13 @@ class AuthFirebase extends Component {
         this.state = {
             email: '',
             password: '',
-            user: null,
-            currentUser: null
+            user: null
 
         };
     }
 
     componentWillMount() {
-        firebase.auth().onAuthStateChanged(user => {
-            // if(user){
-            //     let currentUser = '';
-            //     currentUser = firebase.auth().currentUser
-            //     console.log(currentUser)
-            //     let params = new URLSearchParams(document.location.search.substring(1));
-            //     console.log(params)
-            //     let userKey = params.get("user");
-            //     console.log(userKey)
-            // }
+        firebase.auth().onAuthStateChanged((user) => {
                 this.setState({user})
             })
             

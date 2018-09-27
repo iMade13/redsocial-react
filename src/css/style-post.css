@@ -383,3 +383,14 @@ main .publicacion div #publicar {
     color: #005d2f;
     cursor: pointer;
 }
+
+div#cont.col{
+    padding: 1em 0.5em;
+    border-bottom-right-radius: 0.4em;
+    border-bottom-left-radius: 0.4em;
+    background-color: #FFF;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    color: #4E4D53;
+    text-align: left;
+}

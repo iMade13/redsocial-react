@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import firebase from 'firebase';
+import 'firebase/database';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
@@ -6,10 +8,7 @@ import {faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas} from '@fortaw
 //import Menu from '../Global/Menu';
 
 library.add(faBars, faEnvelope, faUserCircle, faEdit, faGlobeAmericas);
-library.add(faEnvelope);
-library.add(faUserCircle);
-library.add(faEdit);
-library.add(faGlobeAmericas);
+
 const spanStyle = {
     display: 'none'
 }
@@ -18,7 +17,7 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            disabled: true
+            disabled: true,
         }
     }
 

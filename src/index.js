@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import firebase from 'firebase';
 import AuthFirebase from './Components/Login/AuthFirebase';
+//import Users from './Components/Users/GetUsers'
 import registerServiceWorker from './registerServiceWorker';
 
 import '../src/css/style.css';

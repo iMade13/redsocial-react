@@ -7,12 +7,12 @@ import Home from '../Pages/Home';
 import UserList from '../Pages/UserList';
 import Mensajes from '../Pages/Mensajes';
 import Posteo from '../Pages/Posteo'
-import '../../css/style.css';
+
 
 library.add(faUser, faUsers, faEnvelope, faSignOutAlt)
 
-function Navbar(props) {
-  return (
+const Navbar= (props) => (
+
 
     <Router>
     <div>
@@ -42,7 +42,7 @@ function Navbar(props) {
       <Route path="/Mensajes" component={Mensajes} />
     </div>
   </Router>
-  )
-}
+  
+)
 
 export default Navbar;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Global/Logo'
-import '../../css/style.css'
+
 
 
 //..............................................creacion de componente de funcion sin estado

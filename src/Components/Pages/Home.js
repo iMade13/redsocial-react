@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Global/Header';
 import Publicidad from '../Global/Publicidad';
 import Profile from '../Global/Profile';
-import Navbar from '../Global/Navbar';
+//import Navbar from '../Global/Navbar';
 
 
 
@@ -13,7 +13,7 @@ function Home(props) {
             <main className="container">
                 <div className="row">
                     <div className="col-md-3 barra-lateral-izquierda" id="barra-lateral-izquierda">
-                        <Navbar {...props}/>
+                         {/* <Navbar {...props}/>  */}
                         <Publicidad/>
                     </div>
 

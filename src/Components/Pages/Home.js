@@ -24,7 +24,6 @@ const Home = (props) => {
                         {/* <Messages {...props}/> */}
 
                         <Post {...props}/>
-                        <ShowPost {...props}/>
                     </div>
                 </div>
                 {/* <Profile {...props}/> */}

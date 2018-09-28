@@ -116,7 +116,7 @@ class Post extends Component {
                 </div>
 
                 <div id='contentPublicaciones'>
-                    {/* {this
+                    {this
                         .state
                         .post
                         .map(posteo => {
@@ -127,7 +127,7 @@ class Post extends Component {
                                 removeNote={this.removePost}
                                 />)
                         })
-                    } */}
+                    }
 
                   {/* <ShowPost /> */}
                 </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../css/style-post.css'
+import '../../css/style.css'
 
 //Assets
 import image1 from "../../img/image-1.jpg"

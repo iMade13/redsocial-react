@@ -2,16 +2,16 @@ import React, {Component} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faImage, faBars} from '@fortawesome/free-solid-svg-icons'
-
+import '../../css/style-post.css'
 
 library.add(faImage, faBars)
 
 class Menu extends Component {
     constructor(props) {
         super(props)
-        this.fondo = React.createRef()
+        //this.fondo = React.createRef()
         this.btnMenu = React.createRef()
-        this.barraLateral = React.createRef()
+        //this.barraLateral = React.createRef()
         this.toggle = this
             .toggle
             .bind(this)
@@ -20,8 +20,8 @@ class Menu extends Component {
     
     toggle() {
         let boton = this.btnMenu.current;
-        let fondo_enlace = this.fondo.current;
-        let barra_lateral = this.barraLateral.current;
+        let fondo_enlace = document.getElementById('fondo-enlace')
+        let barra_lateral = document.getElementById('barra-lateral-izquierda')
 
         boton.addEventListener('click', function () {
             fondo_enlace
@@ -44,8 +44,7 @@ class Menu extends Component {
 
     render() {
         return (
-            <div className='col' ref={this.barraLateral}>
-                <a ref={this.fondo} className="fondo-enlace d-md-none" id="fondo-enlace"></a>
+            <div className='col'>
                 <a
                     className="btn-menu d-md-none d-flex justify-content-between"
                     ref={this.btnMenu}

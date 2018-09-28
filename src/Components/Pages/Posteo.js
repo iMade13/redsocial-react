@@ -2,9 +2,7 @@ import React from 'react';
 import Header from '../Global/Header';
 import Publicidad from '../Global/Publicidad';
 import Post from '../Global/Post';
-import Navbar from '../Global/Navbar';
-
-
+//import Navbar from '../Global/Navbar';
 
 function Posteo(props) {
     return (
@@ -13,7 +11,7 @@ function Posteo(props) {
             <main className="container">
                 <div className="row">
                     <div className="col-md-3 barra-lateral-izquierda" id="barra-lateral-izquierda">
-                        <Navbar {...props}/>
+                        {/* <Navbar {...props}/> */}
                         <Publicidad/>
                     </div>
 

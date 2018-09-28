@@ -24,7 +24,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -d build"
   },
   "description": "Red Social utilizando React & Firebase",
   "main": "index.js",
@@ -42,5 +42,5 @@
   "bugs": {
     "url": "https://github.com/iMade13/redsocial-react/issues"
   },
-  "homepage": "https://github.com/iMade13/redsocial-react#readme"
+  "homepage": "https://imade13.github.io/socialnetwork-react/"
 }
